@@ -53,3 +53,20 @@ def ConflictsBetweenTwoBlocks(array1, array2):
             conflictChecker(obj, obj2)
     print("DONE")
     return
+
+
+def arrayFormatter(title, day, startTime, ifStartAM, end, ifEndAM):
+    return [title, day, startTime, ifStartAM, end, ifEndAM]
+
+
+def blockMaker(blockSection, *args):
+    # array arranged as [block, course, title, day, startTime, ifStartAM, end, ifEndAM]
+    # print(list(args))
+    argsInList = list(args)
+    for arg in argsInList:
+        block = Block(blockSection)
+        i = 0
+        while i < len(arg):
+            block.subjects[arg[0]] = Subject(arg[1], arg[2], arg[3], arg[4], arg[5])
+            i += 1
+    return block
