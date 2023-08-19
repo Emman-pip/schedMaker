@@ -4,6 +4,9 @@ class Block:
 
     subjects = {}
 
+    def __del__(self):
+        pass
+
 
 class Subject:
     def __init__(self, day, start, isStartAM, end, isEndAM):
@@ -14,9 +17,12 @@ class Subject:
         self.end = end
         self.isEndAM = isEndAM
 
+    def summary(self):
+        print(self.day, self.start, self.isStartAM, self.end, self.isEndAM)
+
 
 # code would have been much more concise if the
-def conflictChecker(block1, block2="nothing"):
+def conflictChecker(block1, block2):
     for key, value in block1.subjects.items():
         for key2, value2 in block2.subjects.items():
             # if value.day is the same:
