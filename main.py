@@ -8,17 +8,15 @@ class Block:
         pass
 
 
-class Subject:
-    def __init__(self, day, start, isStartAM, end, isEndAM):
-        # self.name = title
+class Subject(Block):
+    def __init__(self, day="", start=0, isStartAM=0, end=0, isEndAM=0):
+        # super().__init__(block)
+        # self.title = title
         self.day = day
         self.start = start
         self.isStartAM = isStartAM
         self.end = end
         self.isEndAM = isEndAM
-
-    def summary(self):
-        print(self.day, self.start, self.isStartAM, self.end, self.isEndAM)
 
 
 # code would have been much more concise if the
@@ -65,14 +63,32 @@ def arrayFormatter(title, day, startTime, ifStartAM, end, ifEndAM):
     return [title, day, startTime, ifStartAM, end, ifEndAM]
 
 
-def blockMaker(blockSection, *args):
+# def blockMaker(blockSection, *args):
+#     # array arranged as [block, course, title, day, startTime, ifStartAM, end, ifEndAM]
+#     # print(list(args))
+#     argsInList = list(args)
+#     for arg in argsInList:
+#         block = Subject(blockSection)
+#         i = 0
+#         while i < len(arg):
+#             block.subjects[arg[0]] = Subject(
+#                 blockSection, arg[1], arg[2], arg[3], arg[4], arg[5]
+#             )
+#             i += 1
+#     return block
+
+
+def blockMaker(block, *args):
+    print(args)
     # array arranged as [block, course, title, day, startTime, ifStartAM, end, ifEndAM]
     # print(list(args))
     argsInList = list(args)
     for arg in argsInList:
-        block = Block(blockSection)
         i = 0
         while i < len(arg):
             block.subjects[arg[0]] = Subject(arg[1], arg[2], arg[3], arg[4], arg[5])
             i += 1
     return block
+
+
+lol = blockMaker(Block("section"), [1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6])

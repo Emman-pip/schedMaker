@@ -1,3 +1,5 @@
+from main import Block
+
 from main import (
     conflictChecker,
     ConflictsBetweenTwoBlocks,
@@ -15,6 +17,7 @@ IT1101 = blockMaker(
     arrayFormatter("GED103", "Thursday", 11, True, 1, False),
 )
 
+
 IT1107 = blockMaker(
     "IT1107",
     arrayFormatter("IT111", "Monday", 2, False, 4, False),
@@ -25,6 +28,7 @@ IT1107 = blockMaker(
 )
 
 
+# blocknum21 = Block("IT2101")
 IT2101 = blockMaker(
     "IT2101",
     arrayFormatter("PE103", "Monday", 4, False, 6, False),
@@ -77,9 +81,5 @@ IT2105 = blockMaker(
 )
 
 
-ConflictsBetweenTwoBlocks([IT1101], [IT2101])
-for value in IT1101.subjects.values():
-    print("IT1101\n", value.summary())
-
-for key, value in IT2101.subjects.values():
-    print("IT2101\n", key, value.summary())
+ConflictsBetweenTwoBlocks([IT1107], [IT2101])
+# print(IT1107.subjects["IT111"].day)
