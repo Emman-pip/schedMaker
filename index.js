@@ -91,7 +91,8 @@ subjectAppend(
 const IT1102 = block("IT1102");
 subjectAppend(
   IT1102,
-  subject("IT111", "Thursday", 7, true, 10, true),
+  subject("IT111", "Monday", 9, true, 11, true),
+  subject("IT111#2", "Thursday", 7, true, 10, true),
   subject("FILI101", "Tuesday", 10, true, 11, true),
   subject("FILI101#2", "Wednesday", 8, true, 10, true),
   subject("GED103", "Monday", 1, false, 3, false),
@@ -142,7 +143,7 @@ const IT1105 = block("IT1105");
 subjectAppend(
   IT1105,
   subject("IT111", "Monday", 7, true, 10, true),
-  subject("IT111", "Thursday", 9, true, 11, true),
+  subject("IT111#2", "Thursday", 9, true, 11, true),
   subject("FILI101", "Monday", 1, false, 2, false),
   subject("FILI101#2", "Wednesday", 10, true, 12, false),
   subject("GED103", "Monday", 10, true, 11, true),
@@ -176,7 +177,7 @@ subjectAppend(
   subject("CPE405#2", "Friday", 1, false, 3, false),
   subject("PE103", "Thursday", 4, false, 6, false),
   subject("PHY101", "Tuesday", 1, false, 4, false),
-  subject("PHY101#2", "Thursday", 10, true, 12, true),
+  subject("PHY101#2", "Thursday", 10, true, 12, false),
   subject("LITR2", "Monday", 7, true, 9, true),
   subject("LITR2#2", "Tuesday", 4, false, 5, false)
 );
@@ -208,7 +209,7 @@ subjectAppend(
   IT2105,
   subject("CPE405", "Monday", 7, true, 10, true),
   subject("PE103", "Friday", 3, false, 5, false),
-  subject("PHY101", "Monday", 10, true, 12, true),
+  subject("PHY101", "Monday", 10, true, 12, false),
   subject("PHY101#2", "Friday", 7, true, 10, true),
   subject("LITR2", "Wednesday", 2, false, 4, false),
   subject("LITR2#2", "Tuesday", 1, false, 2, false)
@@ -219,3 +220,6 @@ checkMultipleSchedules(
   [IT2101, IT2102, IT2103, IT2104, IT2105],
   true
 );
+
+// safe combinations:
+// IT1104 and IT2103
