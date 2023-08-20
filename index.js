@@ -66,6 +66,31 @@ function checkMultipleSchedules(left, right, c = false) {
   }
 }
 
+function subjectsTime(block) {
+  let START = "";
+  let END = "";
+  console.log(block.block);
+  for (let i = 0; i < Object.keys(block.subjects).length; i++) {
+    if (block.subjects[Object.keys(block.subjects)[i]].isStartAM == true) {
+      START = "AM";
+    } else {
+      START = "PM";
+    }
+    if (block.subjects[Object.keys(block.subjects)[i]].isStartPM == true) {
+      END = "AM";
+    } else {
+      END = "PM";
+    }
+    console.log(
+      block.subjects[Object.keys(block.subjects)[i]].title,
+      block.subjects[Object.keys(block.subjects)[i]].day,
+      `${block.subjects[Object.keys(block.subjects)[i]].start}${START} - ${
+        block.subjects[Object.keys(block.subjects)[i]].end
+      }${END}`
+    );
+  }
+}
+
 // const IT1101 = block("IT1101");
 // subjectAppend(
 //   IT1101,
@@ -215,11 +240,14 @@ subjectAppend(
   subject("LITR2#2", "Tuesday", 1, false, 2, false)
 );
 // set third argument to true to see al conflicts
-checkMultipleSchedules(
-  [IT1101, IT1102, IT1103, IT1104, IT1105, IT1106, IT1107, IT1108],
-  [IT2101, IT2102, IT2103, IT2104, IT2105],
-  true
-);
+// checkMultipleSchedules(
+//   [IT1101, IT1102, IT1103, IT1104, IT1105, IT1106, IT1107, IT1108],
+//   [IT2101, IT2102, IT2103, IT2104, IT2105],
+//   true
+// );
 
 // safe combinations:
 // IT1104 and IT2103
+subjectsTime(IT1104);
+console.log();
+subjectsTime(IT2103);
